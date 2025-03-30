@@ -6,7 +6,7 @@ import { baseUrl } from "../baseUrl";
 // step 1 => context creation
 export const AppContext = createContext();
 
-function AppContextProvider({ children }) {
+function AppContextProvider({ children }) {     // children <App /> ko show kr rha hai (index.js)
     const [loading, setLoading] = useState(false);
     const [posts, setPosts] = useState([]);
     const [page, setPage] = useState(1);    // by default 1 page aana chahiye
@@ -27,7 +27,7 @@ function AppContextProvider({ children }) {
 
         }
         catch (error) {
-            console.log("Error aa rha hai");
+            console.log("Error 404");
             setPage(1);
             setPosts([]);
             setTotalPages(null);
@@ -44,6 +44,7 @@ function AppContextProvider({ children }) {
 
     }
 
+    // data pass krna hai
     const value = {
         posts,
         setPosts,

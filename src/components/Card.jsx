@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Pagination = () => {
+const Card = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Pagination = () => {
   )
 }
 
-export default Pagination
+export default Card
