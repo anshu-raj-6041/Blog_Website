@@ -13,9 +13,13 @@ function AppContextProvider({ children }) {     // children <App /> ko show kr r
     const [totalPages, setTotalPages] = useState(null);
 
     // data filling pending
-    async function fetchBlogPosts(page = 1) {
+    async function fetchBlogPosts(page = 1, tag=null, category) {
         setLoading(true);
-        let url = `${baseUrl}?page=${page}`
+        let url = `${baseUrl}?page=${page}`;
+
+        if(tag) {
+            url += `&category=${category}`;
+        }
 
         try {
             const result = await fetch(url);
